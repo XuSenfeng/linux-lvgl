@@ -11,6 +11,7 @@
 #include "./pages/ui_GameMemoryPage/ui_GameMemoryPage.h"
 #include "./pages/ui_DrawPage/ui_DrawPage.h"
 #include "./pages/ui_CalculatorPage/ui_CalculatorPage.h"
+#include "./pages/ui_TimerPage/ui_TimerPage.h"
 
 #include "rclcpp/rclcpp.hpp"
 #include <string>
@@ -127,6 +128,13 @@ ui_app_data_t ui_apps[] =
         .button_init = ui_ROSTest_button,
         .arg = (void *)&g_executor
 
+    },
+    {
+        .name = "TimerPage",
+        .init = ui_TimerPage_init,
+        .deinit = ui_TimerPage_deinit,
+        .page_obj = NULL,
+        .button_init = ui_timer_button
     }
 
 };

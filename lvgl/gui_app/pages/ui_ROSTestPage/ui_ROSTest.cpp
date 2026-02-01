@@ -116,11 +116,11 @@ void ui_ROSTest_init(void *arg)
     static TwistCommand cmd_right = {0.0f, -1.0f};
     static TwistCommand cmd_stop = {0.0f, 0.0f};
 
-    ui_create_cmd_button(ROSTestPage, "Forward", 20, 80, &cmd_forward);
-    ui_create_cmd_button(ROSTestPage, "Back", 20, 140, &cmd_backward);
-    ui_create_cmd_button(ROSTestPage, "Left", 20, 200, &cmd_left);
-    ui_create_cmd_button(ROSTestPage, "Right", 20, 260, &cmd_right);
-    ui_create_cmd_button(ROSTestPage, "Stop", 20, 320, &cmd_stop);
+    ui_create_cmd_button(ROSTestPage, "Forward", 80, 80, &cmd_forward);
+    ui_create_cmd_button(ROSTestPage, "Back", 80, 200, &cmd_backward);
+    ui_create_cmd_button(ROSTestPage, "Left", 20, 140, &cmd_left);
+    ui_create_cmd_button(ROSTestPage, "Right", 140, 140, &cmd_right);
+    ui_create_cmd_button(ROSTestPage, "Stop", 80, 140, &cmd_stop);
 
 
     // load page

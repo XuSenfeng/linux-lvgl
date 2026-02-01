@@ -38,9 +38,9 @@ const char * city_adcode_path = "/home/jiao/config/gaode_adcode.json"; // 城市
 
 // 设置背光亮度
 int sys_set_lcd_brightness(int brightness) {
-#if LV_USE_SIMULATOR == 0
+    brightness = 100 - brightness; // 反转亮度值
     if (brightness < 0 || brightness > 100) return -1;
-    if (brightness < 10) brightness = 10; // 亮度太低可能导致屏幕无法显示
+    if (brightness < 5) brightness = 5; // 亮度太低可能导致屏幕无法显示
     if (brightness > 95) brightness = 95;
     int fd = open(BRIGHTNESS_PATH, O_WRONLY);
     if (fd == -1) {
@@ -58,7 +58,6 @@ int sys_set_lcd_brightness(int brightness) {
     }
 
     close(fd);
-#endif
     return 0;
 }
 
@@ -67,7 +66,6 @@ int sys_set_lcd_brightness(int brightness) {
 int sys_set_volume(int level) {
     if (level < 0 || level > 100) return -1; // 音量级别应在0到100之间
     // 这里可以添加实际设置硬件音量的代码
-#if LV_USE_SIMULATOR == 0
     const char *card = "hw:0";       // 声卡名称
     const char *selem_name = "DAC LINEOUT"; // 控件名称
     snd_mixer_t *handle;
@@ -133,7 +131,6 @@ int sys_set_volume(int level) {
 
     // 关闭混音器
     snd_mixer_close(handle);
-#endif
     return 0;
 }
 
