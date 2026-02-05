@@ -45,9 +45,9 @@ LV_FONT_DECLARE(ui_font_heiti24)
 LV_FONT_DECLARE(ui_font_shuhei22)
 LV_FONT_DECLARE(ui_font_NuberBig90)
 
-LV_FONT_DECLARE(font_led128);
-LV_FONT_DECLARE(font_led90);
-LV_FONT_DECLARE(tomato_font32);
+LV_FONT_DECLARE(font_led128)
+LV_FONT_DECLARE(font_led90)
+LV_FONT_DECLARE(tomato_font32)
 
 // ui apps data
 typedef lv_lib_pm_page_t ui_app_data_t;

@@ -12,6 +12,7 @@
 #include "./pages/ui_DrawPage/ui_DrawPage.h"
 #include "./pages/ui_CalculatorPage/ui_CalculatorPage.h"
 #include "./pages/ui_TimerPage/ui_TimerPage.h"
+#include "./pages/ui_snake_ai/ui_snake_ai.h"
 
 #include "rclcpp/rclcpp.hpp"
 #include <string>
@@ -135,6 +136,13 @@ ui_app_data_t ui_apps[] =
         .deinit = ui_TimerPage_deinit,
         .page_obj = NULL,
         .button_init = ui_timer_button
+    },
+    {
+        .name = "SnakeAIPage",
+        .init = ui_Snake_AI_init,
+        .deinit = ui_Snake_AI_deinit,
+        .page_obj = NULL,
+        .button_init = ui_Snake_AI_button
     }
 
 };
